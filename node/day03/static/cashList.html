@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=750px,target-densitydpi=device-dpi,user-scalable=no" />
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<title>提现明细</title>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link rel="stylesheet" type="text/css" href="//m.hunli.baihe.com/static/topic/special/css/rest.css" />
+		<link rel="stylesheet" type="text/css" href="css/integral.css" />
+		<script type="text/javascript">
+			var is_low = navigator.userAgent.toLowerCase().indexOf('android') != -1;
+			var _ww = (window.screen.availWidth * (window.devicePixelRatio || 1.5) / 1);
+			if(is_low && _ww < 720) {
+				document.writeln('<meta name="viewport" content="width=750px,target-densitydpi=device-dpi,user-scalable=yes,initial-scale=0.5" />');
+			} else {
+				document.writeln('<meta name="viewport" content="width=750px,target-densitydpi=device-dpi,user-scalable=no" />');
+			}
+		</script>
+		<script type="text/javascript" charset="utf-8" src="//static4.hunli.baihe.com/common/jquery-1.8.3.min.js"></script>
+	</head>
+	<body>
+		<div id="container" class="container">
+			
+			<div class="cash-ul">
+				<div class="cash-list">
+					<div class="left-wrap">
+						<div class="store-name">任务奖金体现</div>
+						<div class="cash-times">2019-10-1  12:00 </div>
+					</div>
+					<div class="center-wrap">已到账</div>
+					<div class="right-wrap">1.0</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			// 解决苹果不回弹页面
+			var u = navigator.userAgent, app = navigator.appVersion
+			var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+			$(document).ready(function(){
+				$("input").blur(function(){
+					if (isIOS) {
+						blurAdjust()
+					}
+				});
+			});
+			
+			function blurAdjust(e){
+				setTimeout(()=>{
+					// alert("1231321233")
+					if(document.activeElement.tagName == 'INPUT' || document.activeElement.tagName == 'TEXTAREA'){
+						return
+					}
+					let result = 'pc';
+					if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) { //判断iPhone|iPad|iPod|iOS
+							result = 'ios'
+					}else if(/(Android)/i.test(navigator.userAgent)) {  //判断Android
+							result = 'android'
+					}
+					
+					if( result = 'ios' ){
+						document.activeElement.scrollIntoViewIfNeeded(true);
+					}
+				},100)
+			}
+		</script>
+	</body>
+
+</html>

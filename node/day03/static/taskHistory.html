@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=750px,target-densitydpi=device-dpi,user-scalable=no" />
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<title>历史任务</title>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link rel="stylesheet" type="text/css" href="//m.hunli.baihe.com/static/topic/special/css/rest.css" />
+		<link rel="stylesheet" type="text/css" href="css/integral.css" />
+		<script type="text/javascript">
+			var is_low = navigator.userAgent.toLowerCase().indexOf('android') != -1;
+			var _ww = (window.screen.availWidth * (window.devicePixelRatio || 1.5) / 1);
+			if(is_low && _ww < 720) {
+				document.writeln('<meta name="viewport" content="width=750px,target-densitydpi=device-dpi,user-scalable=yes,initial-scale=0.5" />');
+			} else {
+				document.writeln('<meta name="viewport" content="width=750px,target-densitydpi=device-dpi,user-scalable=no" />');
+			}
+		</script>
+		<script type="text/javascript" charset="utf-8" src="//static4.hunli.baihe.com/common/jquery-1.8.3.min.js"></script>
+	</head>
+	<body>
+		<div id="container" class="container">
+			<div class="task-ul">
+				
+			</div>
+		</div>
+		<div class="error" style="display:none;"></div>
+		<script src="js/jf-common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				var userObj = JSON.parse(localStorage.getItem('userObj'));
+				if(userObj){
+					 taskHitstoryCtrl(userObj)
+				}
+			});
+			function taskHitstoryCtrl(obj){
+				$.ajax({
+					async:true,
+					url: _url + '/baihe-adserver/user/history/tasks',  // 跨域URL
+					type: 'GET',
+					dataType: 'jsonp',
+					jsonp: 'jsoncallback', //默认callback
+					data: obj,
+					success: function (data) {
+						if(data.code == 0){
+							console.log(data);
+							 taskListCtrl(data.data.tasklist);
+						}else{
+							errorAlert(data.msg);
+							console.log(data);
+						}
+					},
+					error: function(xhr){
+						//请求出错处理
+					}
+				});
+			}
+			function taskListCtrl(arr){
+				var ul_wrap = $('.task-ul');
+				ul_wrap.html('');
+				var str = '';
+				$.each(arr, function(index,ele) {
+					if(index <10){
+						ele.statusName = ele.status==1?'待审核':ele.status==2?'已完成':ele.status==3?'已失效':'未通过';
+						str+='<div class="task-li">'
+							+'<div class="lf-img" style="color: #ff2828;"></div>'
+							+'<div class="left-wrap">'
+							+'	<div class="store-name">'+ele.name+' <span style="color: #f8b526;">'+ele.rewardprice+'元</span></div>'
+							+'	<div class="cash-times">'+ele.expiretime+'到期</div>'
+							+'</div>'
+							+'<div class="right-wrap status_'+ele.status+'">'+ele.statusName+'</div>'
+							+'<div class="clear"></div>'
+						+'</div>';
+					}
+					
+				});
+				ul_wrap.html(str);
+			}
+			
+		</script>
+	</body>
+
+</html>
