@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.wukong{
+			    position: fixed;
+			    right: 0;
+			    bottom: 200px;
+			    z-index: 999999;
+			    animation: mymove 5s infinite ease-in-out;
+			}
+			@keyframes mymove {
+			  0% {
+			    bottom: 200px;
+			  }
+			  50% {
+			    bottom: 250px;
+			  }
+			  100% {
+			    bottom: 200px;
+			  }
+			}
+			.message{
+			    padding: 5px 20px;
+			    color: #000;
+			    font-size: 15px;
+			    position: absolute;
+			    top: -38px;
+			    right: 88px;
+			    background-color:#f3e100;
+			    white-space: nowrap;
+			}
+			.message:before{
+			    content: '';
+			    position: absolute;
+			    right: 10px;
+			    top: 100%;
+			    margin-left: 10px;
+			    float: left;
+			    width: 0; 
+			    height: 0;
+			    border-width: 8px;
+			    border-style: solid;
+			    border-color:#f3e100 transparent transparent transparent;
+			}
+			.wukong .wukong-img{
+			    width: 200px;
+			    height: 200px;
+			    overflow: hidden;
+			}
+			.wukong-img img{
+			    width: 200px;
+			    height: 200px;
+			}
+			/* 小火箭css */
+#gotop1 {
+    width: 80px;
+    position: fixed;
+    bottom: 90px;
+    cursor: pointer;
+    z-index: 99998;
+    right: 50px;
+}
+#gotop1 img{
+    width: 100%;
+}
+
+/* 小火箭悬停特效 */
+
+#gotop1:hover {
+    animation: rubberBand 1s;
+}
+
+@keyframes rubberBand {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    transform: scale3d(.95, 1.05, 1);
+  }
+
+  75% {
+    transform: scale3d(1.05, .95, 1);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+/* end 小火箭 */
+
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="wukong">
+			    <div class="message">welocome!</div>
+			    <div class="wukong-img">
+			        <img src="images/o_wukong.png">
+			    </div>
+			</div>
+		    <span id="gotop1">
+		        <img src="images/o_huojian.png" alt="返回顶部小火箭">
+		    </span>
+	    </div>
+	    <script type="text/javascript" charset="utf-8" src="//static4.hunli.baihe.com/common/jquery-1.8.3.min.js"></script>
+	    <script type="text/javascript">
+//	    	function $(ele){
+//	    		return document.getElementById(ele)
+//	    	}
+	    	// 返回顶部，绑定gotop1图标事件
+		$("#gotop1").click(function(e) {
+		      $("html,body").animate({scrollTop:0}, 500);
+		 });
+		
+		//轮播
+		var tips = ['有志者事竟成。','热爱生活，学会生活，创造生活。','读书不觉已春深，一寸光阴一寸金。','要么就努力的向上爬，要么就生活在社会最底层。','坚强的信心，能使平凡的人做出惊人的事业。','走的再远，也不要忘记回家的路。','当上帝赐给你荒野时，就意味着，他要你成为高飞的鹰。','过去的事情就应该放下，未来的生活才会没有负担。','你若能作茧自缚，就能破茧成蝶。','高傲的活着，不如平凡做自己。','绳锯木断，水滴石穿。','光阴似箭，日月如梭。','人生在勤，不索何获。','穷则变，变则通，通则久。','百学须先立志。','工欲善其事，必先利其器。','人生如梦，一樽还酹江月。','吾生也有涯，而知也无涯。','莫等闲，白了少年头，空悲切。','少壮不努力，老大徒伤悲。','积土而为山，积水而为海。','书读百遍，其义自见。','海阔凭鱼跃，天高任鸟飞。','穷且益坚，不坠青云之志。','志当存高远。','敏而好学，不耻下问。','一日不书，百事荒芜。','临渊羡鱼，不如退而结网。'];
+		var __MaxNumber__ = tips.length;
+		setInterval(function(){
+		    var _number = Math.floor(Math.random()*__MaxNumber__);
+		    $('.message').html(tips[_number]);
+		}, 5000);
+        
+	    </script>
+	</body>
+</html>
