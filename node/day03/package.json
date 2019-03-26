@@ -7,8 +7,7 @@
     "test": "test"
   },
   "dependencies": {
-    "silly-datetime": "^0.1.2",
-    "bar": "^0.0.1"
+    "silly-datetime": "^0.1.2"
   },
   "devDependencies": {},
   "scripts": {
