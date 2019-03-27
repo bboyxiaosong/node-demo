@@ -43,7 +43,7 @@ var showStudent = function (req,res) {
 
 }
 
-var show404 = function (req,res) {
+var  show404 = function (req,res) {
 
     res.writeHeader(404,{'Content-Type':'text/html;charset=UTF-8'});
 
