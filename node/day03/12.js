@@ -2,7 +2,13 @@ var http = require('http');
 
 var formidable = require('formidable');
 
-// formidable 的用法
+var fs = require('fs');
+
+var util = require('util');
+
+var sd = require('silly-datetime');
+
+// formidable 上传图片
 
 
 
@@ -25,6 +31,9 @@ var server = http.createServer(function (req,res) {
             console.log('fields',fields);
             console.log('files',files);
 
+            var oldpath = __dirname+ '/'+ files.tupian.path;
+
+            var ttt =  sd.format(new Date(), 'YYYY-MM-DD HH:mm');
             res.writeHead(200, {'content-type': 'text/plain'});
 
             res.end('success');
