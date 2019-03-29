@@ -23,7 +23,7 @@ app.get(/^\/student\/([\d]{10})$/,function (req,res) {
 
     res.send("学生信息，学号",req.params[0]);
 
-})
+});
 
 
 
