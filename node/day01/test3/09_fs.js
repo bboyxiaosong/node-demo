@@ -1,3 +1,4 @@
+// 此例子演示的是创建文件夹
 var http = require('http');
 
 var fs = require('fs'); 

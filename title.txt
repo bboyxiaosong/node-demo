@@ -1,0 +1,35 @@
+
+// day01 是node 入门的一些js 模块使用 忘了的话复习自己使用
+
+1  day02 是node js 读取本地文件显示html ; 
+
+2  （1）day03 
+	14.js && 13.js   模板 ejs 的使用 简单介绍
+	
+	12.js  && 11.js 是 formidable 方法使用 上传图片 如果需要什么就安装什么
+	
+	10.js  是 post 提交方法  以及提交完成之后 数据的处理
+
+	09.js 是node 原生自己判断自己写路由
+	
+	08.js 时间插件使用方法 
+	
+	07.js 是下载插件如果直接饮用就是node_modules引入的如下
+	  var foo = require('foo.js');// 这里如果不写 引入的路径默认引入node_modules
+
+
+	console.log(foo.msg);
+
+3.day04 是 js 之间的互相引入
+
+
+4 day05 对应 视频里边的express 框架
+	
+
+	
+
+    	
+
+
+
+

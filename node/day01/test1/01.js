@@ -23,10 +23,10 @@ server.listen(5000,'192.168.62.181');
 
 
 
-var http = require('http')
-var server = http.createServer(function(req,res){
-	if(req.ur)
-})
+// var http = require('http')
+// var server = http.createServer(function(req,res){
+// 	if(req.ur)
+// })
 
 
 

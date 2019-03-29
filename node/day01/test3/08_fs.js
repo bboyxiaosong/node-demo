@@ -1,3 +1,5 @@
+// 读取文件 多人读取不会崩溃
+
 var http = require('http');
 
 var fs = require('fs'); 

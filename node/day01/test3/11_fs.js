@@ -1,3 +1,4 @@
+// 检测是不是个文件夹
 var http = require('http');
 
 var fs = require('fs'); 
