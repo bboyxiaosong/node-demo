@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=750px,target-densitydpi=device-dpi,user-scalable=no" />
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<title>任务详情</title>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link rel="stylesheet" type="text/css" href="//static1.hunli.baihe.com/rest.css" />
+		<link rel="stylesheet" type="text/css" href="css/integral.css" />
+		<script type="text/javascript">
+			var is_low = navigator.userAgent.toLowerCase().indexOf('android') != -1;
+			var _ww = (window.screen.availWidth * (window.devicePixelRatio || 1.5) / 1);
+			if(is_low && _ww < 720) {
+				document.writeln('<meta name="viewport" content="width=750px,target-densitydpi=device-dpi,user-scalable=yes,initial-scale=0.5" />');
+			} else {
+				document.writeln('<meta name="viewport" content="width=750px,target-densitydpi=device-dpi,user-scalable=no" />');
+			}
+		</script>
+		<script type="text/javascript" charset="utf-8" src="//static4.hunli.baihe.com/common/jquery-1.8.3.min.js"></script>
+		<script src="js/jf-common.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="taskDetail-wrap">
+				<img id="taskDetail-img_url" class="taskDetail-img_url" />
+				<div class="taskDetail-desc-title">任务描述 :</div>
+				<div class="taskDetail-desc"></div>
+				<a class="taskDetail-bt">立即前往</a>
+				<div class="taskDetail-instruce">
+					<p class="p1">免责声明 ：</p>
+					<p class="p2">如任务完成发现作弊，任务奖励将不予发放，谢谢合作。</p>
+					<p class="p2">活动最终解释权归百合网所有。</p>
+				</div>
+			</div>
+		</div>
+		<div class="error" style="display:none;"></div>
+		<script type="text/javascript">
+			$(function(){
+				var userObj = get('userObj');//过期时间为1周
+			    if (!userObj) {
+			    	 	window.location.href="index.html";
+			       	window.close();
+			    }else{
+			    		var pic = getUrlParms('pic');
+			    		var _link =  getUrlParms('link');
+			    		var desc = getUrlParms('desc');
+			    		if(_link){
+			    			$('#taskDetail-img_url').attr('src',pic);
+				    		$('.taskDetail-bt').attr('href',_link);
+				    		$('.taskDetail-desc').html(desc);
+			    		}else{
+			    			window.location.href="task.html";
+			    		}
+			    }
+			});
+			
+		</script>
+	</body>
+
+</html>
