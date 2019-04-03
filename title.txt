@@ -24,6 +24,49 @@
 
 
 4 day05 对应 视频里边的express 框架
+
+  01.js 是基于框架的 get 请求
+  
+  02.js 是基于框架 express 对文件的读取 
+
+  03.js 是基于框架对 模板的引用 ejs
+
+  04.js 是基于框架对url请求参数的截取
+
+  05.js 基于框架对模板引擎 post 提交
+
+  06.js 基于框架  检测是否重复创建 http模块
+  
+  07.js 讲的是中间键
+	// 这一小节主要讲的是中间键
+
+
+		/*
+
+	路由get post 这些东西就是 中间键，中间键讲究顺序，匹配上第一个之后
+
+	就不往后匹配了，next 函数才能够继续往后匹配
+
+  08.js 对中间的使用  app.use();
+
+  09.js 使用中间键 传递函数
+  
+  10.js  // 静态服务； app.use('/jingtaitai',express.static("./public"));
+	//
+	防止 水管 不往下走了
+	//新路由
+	app.get('/images',function (req,res) {
+
+    		res.send('haha')
+    
+	});
+
+  11.js 呈递模板引擎 给模板引擎传递数据 渲染模板
+
+  12.js && 13.js 是 get 查询和 post 查询
+
+  14.js 是jade 模板引擎的简单使用
+    
 	
 
 	
