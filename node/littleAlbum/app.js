@@ -10,7 +10,7 @@ var router = require("./controller");
 
 app.set("view engine","ejs");
 
-// 路由中间键
+// 路由中间键 静态页面
 
 app.use(express.static("./public"));
 

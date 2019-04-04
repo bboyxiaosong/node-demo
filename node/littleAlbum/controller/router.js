@@ -8,9 +8,6 @@ exports.showIndex = function (req,res,next) {
     //     "albums":file.getAllAlbums()
     // });
 
-
-
-
     file.getAllAlbums(function (err,allAlabums) {
         if (err){
 
