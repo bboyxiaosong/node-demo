@@ -2,7 +2,7 @@
 var file = require("../models/file.js");
 
 
-exports.showIndex = function (req,res) {
+exports.showIndex = function (req,res,next) {
 
     // res.render("index",{
     //     "albums":file.getAllAlbums()
@@ -27,7 +27,7 @@ exports.showIndex = function (req,res) {
 
 }
 
-exports.showAlbum = function (req,res) {
+exports.showAlbum = function (req,res,next) {
 
     var albumName = req.params.albumName;
 

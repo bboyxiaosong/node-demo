@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<style>
+    .header{width: 960px;
+        height: 50px;background: #ccc;margin:0 auto;}
+
+    .main{width: 960px;
+        background: #ccc;margin:0 auto;}
+    .main .left{
+
+        width: 600px;
+        margin-right: 20px;
+        float: left;
+        
+    }
+    .main .right{
+        width:340px;
+        float: left;
+        background-color: #ccc;
+
+    }
+</style>
+    <div class="container">
+        <div class="header"></div>
+
+        <div class="main">
+            <div class="left">
+              <h1><%= biaoti %></h1>
+                <p>时间： <%= shijian%> 作者 <%= zuozhe%></p>
+                <p> <%= neirong%> </p>
+            </div>
+            <div class="right">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

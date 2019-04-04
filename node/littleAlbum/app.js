@@ -22,6 +22,7 @@ app.get("/:albumName",router.showAlbum);
 
 //最后的中间键
 app.use(function (req,res) {
+
     console.log(req.path)
 
     res.render("err")
