@@ -42,4 +42,4 @@ app.get("/news/:id",function (req,res) {
 
 });
 
-app.listen(3000)
+app.listen(3000);

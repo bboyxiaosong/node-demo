@@ -18,7 +18,13 @@ app.use(express.static("./uploads"));
 //首页
 app.get("/",router.showIndex);
 
+app.get("/up",router.shouUp);
+
+app.post("/up",router.doPost);
+
 app.get("/:albumName",router.showAlbum);
+
+
 
 //最后的中间键
 app.use(function (req,res) {

@@ -19,7 +19,7 @@ var server = http.createServer(function (req,res) {
             allData += chunk;
 
             //console.log(chunk)
-            
+
         });
         //  全部传输完毕
         req.addListener("data",function () {

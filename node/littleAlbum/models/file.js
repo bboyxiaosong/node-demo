@@ -2,6 +2,14 @@
 
 var fs = require("fs");
 
+/*
+* 这个callback 函数中有两个参数，一个是err
+* 另一个是所有文件夹
+*
+* */
+
+
+
 exports.getAllAlbums = function (callback) {
 
     fs.readdir("./uploads",function (err,files) {
@@ -62,7 +70,7 @@ exports.getAllImagesByAlbumName = function (albumName,callback) {
 
             if( i == files.length){
 
-                //console.log(allAlbums)
+                //console.log("allImages"+allImages)
                 callback(null,allImages);
 
                 return;
